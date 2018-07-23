@@ -10,6 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var cleancss = require('gulp-clean-css');
 var notify = require("gulp-notify");
 var sass  = require('gulp-sass');
+var rename = require("gulp-rename");
 
 
 
@@ -56,6 +57,7 @@ gulp.task('img', function () {
 gulp.task('scripts', function () {
     return gulp.src([ // Берем все необходимые библиотеки
         './node_modules/jquery/dist/jquery.js',
+        'app/js/coreSlider.js',
         'app/js/app.js'
         
     ])
@@ -66,8 +68,8 @@ gulp.task('scripts', function () {
 });
 
 
-gulp.task('watch', ['browser-sync', 'stylus', 'scripts'], function () {
-    gulp.watch(path.src.css, ['stylus']); // Наблюдение за css файлами в папке css
+gulp.task('watch', ['browser-sync', 'styles', 'scripts'], function () {
+    gulp.watch(path.src.css, ['styles']); // Наблюдение за css файлами в папке css
     gulp.watch(path.src.js, ['scripts']);
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
 
