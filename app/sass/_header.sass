@@ -4,18 +4,39 @@
   height: 130px
   background-color: #353436
 
+  @media screen and (max-width: 900px)
+    height: 100%
+
   &__logo
     width: 50%
     float: left
     padding: 24px 0 0 40px
 
+    @media screen and (max-width: 900px)
+      width: 100%
+      text-align: center
+      float: none
+      padding-left: 0
+
   &__right
     width: 50%
     float: right
 
+    @media screen and (max-width: 900px)
+      width: 100%
+      float: none
+
   &__popup
     position: relative
     padding: 5px 60px 0 0
+
+    @media screen and (max-width: 900px)
+      width: 40%
+      margin: 15px auto
+
+    @media screen and (max-width: 490px)
+      width: 100%
+      padding: 5px 0 0 0
 
     &--link
       display: block
@@ -25,6 +46,9 @@
       text-align: right
       color: #fff
       text-decoration: none
+
+      @media screen and (max-width: 490px)
+        text-align: center
 
       &:hover
         text-decoration: none
@@ -38,4 +62,7 @@
         background: url("../images/lock.png") center center no-repeat
         width: 9px
         height: 13px
+
+        @media screen and (max-width: 490px)
+          right: 25%
 

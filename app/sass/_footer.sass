@@ -1,0 +1,196 @@
+.footer
+  background-color: #353436
+
+  &__top
+    padding-top: 33px
+
+    &-items
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      width: 80%
+      margin: 0 auto
+
+      @media screen and (max-width: 1076px)
+        width: 100%
+
+      &:after
+        content: ''
+        clear: both
+        height: 0
+        display: block
+        visibility: hidden
+
+    &-item
+      width: calc(100% / 4)
+      flex: 0 0 21%
+      padding: 0 10px
+
+      @media screen and (max-width: 1209px)
+        flex: 0 0 25%
+      @media screen and (max-width: 770px)
+        flex: 0 0 50%
+        margin-bottom: 30px
+      @media screen and (max-width: 460px)
+        flex: 0 0 100%
+
+  &__title
+    font-family: $play
+    color: #fefefe
+    font-size: 17px
+    text-transform: uppercase
+    margin: 0 0 19px 0
+
+  &__text
+    font-family: $san-light
+    font-size: 12px
+    color: #fff
+    line-height: 1.8
+    margin: 0
+
+  &__bottom
+    padding: 20px 0 12px 0
+
+.input
+  font-family: $san-light
+  width: 100%
+  height: 32px
+  border: none
+  border-radius: 0
+  outline: none
+  padding-left: 6px
+  color: #8c8c8c
+  font-size: 14px
+  margin-bottom: 14px
+
+  &:last-of-type
+    margin-bottom: 10px
+
+.checkbox
+  vertical-align: bottom
+
+.checkbox-label
+  color: #b5b4b4
+  font-size: 10px
+  display: inline-block
+  padding-left: 5px
+
+.button
+  width: 100%
+  background-color: black
+  border: none
+  border-radius: 0
+  font-size: 18px
+  color: #fff
+  padding: 6px 0
+  margin-top: 10px
+  cursor: pointer
+
+  &:hover
+    transition: all .5s
+    background-color: #e2d1a6
+
+.info-list
+  margin: 0 0 0 117px
+  width: 64%
+  padding: 0
+  list-style: none
+  display: inline-block
+
+  @media screen and (max-width: 1612px)
+    margin: 0 0 0 25px
+    width: 68%
+
+  @media screen and (max-width: 1076px)
+    margin: 0 0 20px 0
+    text-align: center
+    width: 100%
+
+  &__item
+    font-size: 12px
+    color: #fff
+    padding: 0 6px
+    display: inline-block
+
+.mail-link
+  font-size: 12px
+  color: #fff
+  text-decoration: none
+
+  &:hover
+    color: #fff
+    text-decoration: none
+
+.social-links
+  width: 9%
+  padding: 0
+  list-style: none
+  display: inline-block
+  margin: 0
+
+  @media screen and (max-width: 1076px)
+    width: 50%
+    text-align: center
+
+  @media screen and (max-width: 460px)
+    width: 100%
+
+
+  &__item
+    display: inline-block
+    padding: 0 5px
+
+  &__logo
+    width: 18px
+    height: 18px
+    display: inline-block
+    background-image: url("../images/social_icons.png")
+    background-repeat: no-repeat
+
+    &-facebook
+      background-position: 0
+
+    &-insta
+      background-position: -20px
+
+    &-pinterest
+      background-position: -42px
+
+.lang-switcher
+  width: 12%
+  padding: 0
+  list-style: none
+  display: inline-block
+  margin: 0
+
+  @media screen and (max-width: 1612px)
+    width: 18%
+  @media screen and (max-width: 1076px)
+    width: 49%
+    text-align: center
+  @media screen and (max-width: 460px)
+    width: 100%
+
+  &__item
+    position: relative
+    display: inline-block
+    padding: 0px 10px
+
+    &:after
+      content: ''
+      position: absolute
+      width: 1px
+      height: 10px
+      background-color: #fff
+      top: 5px
+      right: 0
+
+    &:last-child
+      &:after
+        display: none
+
+  &__link
+    color: #fff
+    font-size: 14px
+    text-transform: uppercase
+    text-decoration: none

@@ -38,7 +38,7 @@ gulp.task('styles', function() {
         .pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
         .pipe(rename({ suffix: '.min', prefix : '' }))
         .pipe(autoprefixer(['last 15 versions']))
-        .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+        .pipe(cleancss( {level: { 1: { specialComments: 0 } } }))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream())
 });
@@ -55,28 +55,29 @@ gulp.task('img', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src([ // Берем все необходимые библиотеки
+    return gulp.src([
         './node_modules/jquery/dist/jquery.js',
         'app/js/coreSlider.js',
+        'app/js/jquery.arcticmodal-0.3.min.js',
         'app/js/app.js'
         
     ])
         .pipe(concat('scripts.min.js'))
         // .pipe(uglify())
-        .pipe(gulp.dest('app/js')) // Выгружаем в папку app/js
+        .pipe(gulp.dest('app/js'))
         .pipe(browserSync.reload({ stream: true }))
 });
 
 
 gulp.task('watch', ['browser-sync', 'styles', 'scripts'], function () {
-    gulp.watch(path.src.css, ['styles']); // Наблюдение за css файлами в папке css
+    gulp.watch(path.src.css, ['styles']);
     gulp.watch(path.src.js, ['scripts']);
-    gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
+    gulp.watch('app/*.html', browserSync.reload);
 
 });
 
 gulp.task('clean', function () {
-    return del.sync('dist'); // Удаляем папку dist перед сборкой
+    return del.sync('dist');
 });
 
 gulp.task('build', ['clean', 'styles', 'scripts', 'img'], function () {
@@ -86,17 +87,13 @@ gulp.task('build', ['clean', 'styles', 'scripts', 'img'], function () {
         .pipe(gulp.dest('dist/css'));
 
    
-    var buildJs = gulp.src('app/js/scripts.min.js') // Переносим скрипты в продакшен
+    var buildJs = gulp.src('app/js/scripts.min.js')
         
         .pipe(gulp.dest('dist/js'));
 
     var buildFonts = gulp.src('app/fonts/**/*.*')
 
         .pipe(gulp.dest('dist/fonts'));
-
-    // var buildHtml = gulp.src('app/index.html')
-    //
-    //     .pipe(gulp.dest('dist/'));
 
     var buildImages = gulp.src('app/images/**/*.*')
 

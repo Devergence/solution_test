@@ -1,0 +1,49 @@
+.box-modal
+  width: 596px
+  background: #353436
+  box-shadow: none
+  -webkit-border-radius: 0
+  -moz-border-radius: 0
+  border-radius: 0
+  padding-top: 5px
+
+  @media screen and (max-width: 646px)
+    width: 100%
+
+.modal
+
+  &__body
+    display: flex
+    justify-content: space-around
+
+    @media screen and (max-width: 510px)
+      flex-direction: column
+
+  &__title
+    font-family: "play-bold"
+    margin-top: 0
+    color: #fff
+    font-size: 24px
+    text-align: center
+
+.form
+
+  &__login
+    flex: 0 0 40%
+
+  &__registration
+    flex: 0 0 40%
+
+  &__title
+    font-family: "play-bold"
+    color: #fff
+    font-size: 18px
+    text-transform: uppercase
+    margin-bottom: 18px
+
+  &__label
+    display: flex
+
+.warning-message
+  color: #b5b4b4
+  font-size: 12px

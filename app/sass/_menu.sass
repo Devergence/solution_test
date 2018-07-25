@@ -3,15 +3,41 @@
   bottom: 20px
   right: 28px
 
+  &__mobile
+    display: none
+    @media screen and (max-width: 490px)
+      display: block
+
+  &__desktop
+    @media screen and (max-width: 490px)
+      display: none
+
+  @media screen and (max-width: 900px)
+    position: static
+    margin-bottom: 15px
+
   &__list
     padding: 0
     margin: 0
     list-style: none
     text-align: right
+    height: 100%
+    transition: all ease-out .3s
+
+    &-closed
+      height: 0
+      margin-bottom: -15px
+      transition: all ease-in .3s
+
+    @media screen and (max-width: 900px)
+      text-align: center
 
   &__item
     display: inline
     padding: 0 11px
+
+    &-mobile
+      margin-bottom: 10px
 
     &--sub
       position: relative
@@ -46,6 +72,13 @@
     width: 149px
     list-style: none
     background-color: #353436
+
+  &__toggle
+    width: 100%
+    display: block
+    text-align: center
+    margin-bottom: 10px
+    color: #fff
 
 .submenu
 

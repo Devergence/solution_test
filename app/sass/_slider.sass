@@ -1,0 +1,109 @@
+.slider
+  position: relative
+  overflow: hidden
+
+  &__bottom-box
+    position: absolute
+    bottom: 0
+    z-index: 999
+    transition: all ease-in-out .5s
+
+    @media screen and (max-width: 1006px)
+      position: static
+
+    &:before
+      content: ''
+      position: relative
+      background-color: #fff
+      background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MC44MzUgMjQwLjgzNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQwLjgzNSAyNDAuODM1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnPgoJPHBhdGggaWQ9IkV4cGFuZF9MZXNzIiBkPSJNMTI5LjAwNyw1Ny44MTljLTQuNjgtNC42OC0xMi40OTktNC42OC0xNy4xOTEsMEwzLjU1NSwxNjUuODAzYy00Ljc0LDQuNzQtNC43NCwxMi40MjcsMCwxNy4xNTUgICBjNC43NCw0Ljc0LDEyLjQzOSw0Ljc0LDE3LjE3OSwwbDk5LjY4My05OS40MDZsOTkuNjcxLDk5LjQxOGM0Ljc1Miw0Ljc0LDEyLjQzOSw0Ljc0LDE3LjE5MSwwYzQuNzQtNC43NCw0Ljc0LTEyLjQyNywwLTE3LjE1NSAgIEwxMjkuMDA3LDU3LjgxOXoiIGZpbGw9IiMwMDAwMDAiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+      background-position: center
+      background-repeat: no-repeat
+      width: 88px
+      height: 30px
+      display: block
+      top: 0
+      margin: 0 auto
+      cursor: pointer
+      transform: rotate(180deg)
+
+      @media screen and (max-width: 1006px)
+        display: none
+
+    &--hidden
+      bottom: -150px
+      transition: all ease-in-out .5s
+
+      @media screen and (max-width: 1157px)
+        bottom: -135px
+
+      &:before
+        transform: rotate(0deg)
+
+  &__bottom-items
+    width: calc(100% - 40px)
+    margin: 0 auto
+
+    @media screen and (max-width: 1157px)
+      width: calc(100% - 15px)
+    @media screen and (max-width: 1006px)
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+
+  &__bottom-item
+    position: relative
+    width: calc(100% /3)
+    float: left
+    padding: 19px 16px
+
+    @media screen and (max-width: 1006px)
+      flex: 1 1 100%
+      float: none
+
+    &:first-of-type
+      background-color: #e2d1a6
+
+    &:nth-of-type(2)
+      background-color: #fff
+
+    &:last-child
+      background-color: black
+      color: #fff
+
+.item
+
+  &__title
+    font-family: $play
+    font-size: 28px
+    color: #000
+    margin-top: 0
+
+    @media screen and (max-width: 1157px)
+      font-size: 24px
+
+    &--white
+      color: #fff
+
+  &__text
+    font-family: $default-font
+    color: #000
+
+    @media screen and (max-width: 1157px)
+      font-size: 14px
+
+    &--white
+      color: #fff
+
+  &__link
+    position: absolute
+    bottom: 10px
+    right: 15px
+    font-size: 18px
+    color: #fff
+
+    @media screen and (max-width: 1006px)
+      font-size: 14px
+
+    &--black
+      color: #000
+    
